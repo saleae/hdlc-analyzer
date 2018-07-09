@@ -21,9 +21,9 @@ add_library(hdlc_analyzer SHARED ${SOURCES})
 target_link_libraries(hdlc_analyzer PRIVATE Saleae::AnalyzerSDK)
 
 if(MSVC)
-    install(TARGETS hdlc_analyzer RUNTIME DESTINATION ".")
+    install(TARGETS hdlc_analyzer RUNTIME DESTINATION "Analyzers")
 else()
-    install(TARGETS hdlc_analyzer LIBRARY DESTINATION ".")
+    install(TARGETS hdlc_analyzer LIBRARY DESTINATION "Analyzers")
 endif()
 
 set_post_build_destination(hdlc_analyzer)
