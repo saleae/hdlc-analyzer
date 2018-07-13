@@ -14,7 +14,7 @@ struct HdlcByte
 };
 
 class HdlcAnalyzerSettings;
-class ANALYZER_EXPORT HdlcAnalyzer : public Analyzer2
+class HdlcAnalyzer : public Analyzer2
 {
 public:
 	HdlcAnalyzer();
