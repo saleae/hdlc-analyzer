@@ -318,6 +318,7 @@ HdlcByte HdlcAnalyzer::BitSyncReadByte()
         mHdlc->AdvanceToNextEdge();
         U64 endSample = mHdlc->GetSampleNumber();
         mFoundEndFlag = true;
+        mConsecutiveOnes = 0;
         HdlcByte bs = { startSample, endSample, HDLC_FLAG_VALUE };
         return bs;
     }
