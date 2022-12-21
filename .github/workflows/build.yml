@@ -44,6 +44,15 @@ jobs:
       run: |
         cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release
         cmake --build ${{github.workspace}}/build
+        echo "round 1"
+        pwd
+        find .
+        echo "round 2."
+        ls ${{github.workspace}}
+        find ${{github.workspace}}
+        echo "round 3."
+        ls ${{github.workspace}}/build/
+        ls ${{github.workspace}}/build/Analyzers
     - name: Upload Linux build
       uses: actions/upload-artifact@v2
       with:
