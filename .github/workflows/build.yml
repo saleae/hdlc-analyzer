@@ -37,21 +37,13 @@ jobs:
         path: ${{github.workspace}}/build/Analyzers/*.so
   linux:
     runs-on: ubuntu-latest
-    container: quay.io/pypa/manylinux2014_x86_64
     steps:
     - uses: actions/checkout@v2
     - name: Build
       run: |
+        dpkg --list | grep compiler
         cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=Release
         cmake --build ${{github.workspace}}/build
-        echo "round 1"
-        echo "pwd"
-        pwd
-        echo github workspace: ${{github.workspace}}
-        pushd ${{github.workspace}}
-        echo "pwd from workspace"
-        echo ${{github.workspace}}
-        popd
     - name: Upload Linux build
       uses: actions/upload-artifact@v2
       with:
